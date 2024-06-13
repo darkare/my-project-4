@@ -4,8 +4,8 @@ import StarterKit from "@tiptap/starter-kit";
 import "./tiptap.css";
 
 import { debounce } from "throttle-debounce";
-import { CustomText } from "./components/Extension";
-
+// import { CustomText } from "./components/Extension";
+import { CustomText } from './components/MyElementExtension';
 const MyEditor = () => {
   const editorRef = useRef(null);
   const [editor, setEditor] = useState(null);

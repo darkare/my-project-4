@@ -1,21 +1,31 @@
 import { Editor } from '@tiptap/core';
 import StarterKit from '@tiptap/starter-kit';
+import BubbleMenu from '@tiptap/extension-bubble-menu';
 import { debounce } from 'throttle-debounce';
+import { MyElement } from './components/hello-lit';
 import { CustomText } from './components/MyElementExtension';
 
 const editor = new Editor({
   element: document.querySelector('.element'),
-  extensions: [StarterKit, CustomText],
-  onTransaction(transaction) {
-    console.log('transaction main editor', editor.getJSON());
+  extensions: [
+    StarterKit,
+    // NodeView,
+    CustomText,
+    // BubbleMenu.configure({
+    //   element: document.querySelector('.menu'),
+    // }),
+  ],
+  onTransaction(transaction) { 
+    console.log('transaction', editor.getJSON());
   },
 
   content: `
     <p>This is still the text editor you’re used to, but enriched with node views.</p>
-    <node-view contenteditable="false"></node-view>
+    <node-view></node-view>
     <p>Did you see that? That’s a JavaScript node view. We are really living in the future.</p>
   `,
 });
+
 
 //---------------------------------------------------
 const videoInputEl = document.getElementById('video-input');
@@ -57,5 +67,6 @@ const videoInputEl_onInput = debounce(1000, async (event) => {
 });
 
 videoInputEl.addEventListener('input', videoInputEl_onInput);
+export default Editor;
 
 // document.body.appendChild(document.createElement('my-element'));
