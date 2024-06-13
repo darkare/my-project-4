@@ -5,7 +5,7 @@ import "./tiptap.css";
 
 import { debounce } from "throttle-debounce";
 // import { CustomText } from "./components/Extension";
-import { CustomText } from './components/MyElementExtension';
+import { CustomText } from "./components/MyElementExtension";
 const MyEditor = () => {
   const editorRef = useRef(null);
   const [editor, setEditor] = useState(null);
@@ -18,11 +18,11 @@ const MyEditor = () => {
       element: editorRef.current,
       extensions: [StarterKit, CustomText],
       onTransaction(transaction) {
-        console.log("transaction", editorInstance.getJSON());
+        console.log("transaction main editor", editorInstance.getJSON());
       },
       content: `
         <p>This is still the text editor you're used to, but enriched with node views.</p>
-        <node-view></node-view>
+        <node-view contenteditable="false"></node-view>
         <p>Did you see that? That's a JavaScript node view. We are really living in the future.</p>
       `,
     });

@@ -1,11 +1,22 @@
 /* Basic editor styles */
+.element * {
+  font: revert;
+}
+
+.tiptap * {
+  font: revert;
+}
+
 .tiptap > * + * {
   margin-top: 0.75em;
+  /* font:800 1.5rem 'JetBrainsMono', monospace; */
 }
+
 
 .tiptap ul,
 .tiptap ol {
   padding: 0 1rem;
+  list-style: revert;
 }
 
 .tiptap h1,
@@ -52,3 +63,57 @@
   border-top: 2px solid rgba(13, 13, 13, 0.1);
   margin: 2rem 0;
 }
+
+.counter-component {
+  background-color: peachpuff;
+  border: 2px solid purple;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.counter-component label {
+    background-color: lightblue;
+    border-radius: 0 0 0.5rem 0;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    position: absolute;
+    top: 0;
+}
+
+.counter-component .content {
+    margin-top: 1.5rem;
+    padding: 1rem;
+}
+
+.editable-component {
+  background-color: greenyellow;
+  border: 2px solid purple;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.editable-component .label {
+    background-color: lightgray;
+    border-radius: 0 0 0.5rem 0;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    position: absolute;
+    top: 0;
+}
+
+.editable-component .content {
+    margin-top: 1.5rem;
+    padding: 1rem;
+}
+.editable-component .content .is-editable {
+      border: 2px dashed var(--gray-3);
+      border-radius: 0.5rem;
+      margin: 2.5rem 1rem 1rem;
+      padding: 0.5rem;
+}
+  
