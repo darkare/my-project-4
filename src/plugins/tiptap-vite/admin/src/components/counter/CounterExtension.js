@@ -5,7 +5,7 @@ import CounterComponent from './CounterComponent';
 
 const CounterExtension =  Node.create({
   name: 'conterExtension',
-
+  draggable: true,
   group: 'block',
 
   atom: true,

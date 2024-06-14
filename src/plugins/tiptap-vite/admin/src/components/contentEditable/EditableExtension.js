@@ -7,6 +7,7 @@ const EditableExtension =  Node.create({
   name: 'editableExtension',
   group: 'block',
   content: 'inline*',
+  draggable: true,
 
   parseHTML() {
     return [

@@ -117,3 +117,6 @@
       padding: 0.5rem;
 }
   
+.draggable[data-drag-handle]:hover {
+  cursor: grab;
+}

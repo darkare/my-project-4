@@ -30,6 +30,7 @@ export default {
       components: {
         // Input: async () => import('./MyEditor'),
         Input: async () => import('./TipTapReact'),
+        // Input: async () => import('./ImageEditor'),
       },
     });
     app.addMenuLink({

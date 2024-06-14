@@ -384,7 +384,7 @@ export interface ApiBioBio extends Schema.CollectionType {
           preset: 'toolbar';
         }
       >;
-    rtext: Attribute.Blocks;
+    stapyEd: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

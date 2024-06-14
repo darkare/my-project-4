@@ -26,8 +26,8 @@
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "rtext": {
-      "type": "blocks"
+    "stapyEd": {
+      "type": "richtext"
     }
   }
 }
