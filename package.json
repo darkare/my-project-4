@@ -7,7 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "install:plugins:POWERSHELL": "powershell -Command \"Get-ChildItem ./src/plugins -Directory | ForEach-Object { Set-Location $_.FullName; npm install; } ; cd ../../..\""
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.1.1",

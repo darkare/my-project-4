@@ -28,6 +28,7 @@ export default {
       //   defaultMessage: 'novel-editor.description',
       // },
       components: {
+        // Input: async () => import('./MyEditor'),
         Input: async () => import('./TipTapReact'),
       },
     });
