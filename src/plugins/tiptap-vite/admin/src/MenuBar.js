@@ -1,9 +1,9 @@
 import React from "react";
 import { Flex } from '@strapi/design-system';
-import { useCurrentEditor } from "@tiptap/react";
+// import { useCurrentEditor } from "@tiptap/react";
 import { Button } from '@strapi/design-system';
-const MenuBar = () => {
-  const { editor } = useCurrentEditor();
+const MenuBar = ({editor}) => {
+  // const { editor } = useCurrentEditor();
 
   if (!editor) {
     return null;
@@ -12,16 +12,22 @@ const MenuBar = () => {
   return (
     <>
      <Flex gap={1}>
-      <Button
+     <Button onClick={() => editor.chain().focus().toggleBold().run()}>
+        Bold
+      </Button>
+      <Button onClick={() => editor.chain().focus().toggleItalic().run()}>
+        Italic
+      </Button>
+      {/* <Button
         type="button"
         size="S"
         onClick={() => editor.chain().focus().toggleBold().run()}
-        disabled={!editor.can().chain().focus().toggleBold().run()}
+        // disabled={!editor.can().chain().focus().toggleBold().run()}
         className={editor.isActive("bold") ? "is-active" : ""}
       >
         bold
-      </Button>
-      <Button
+      </Button> */}
+      {/* <Button
         type="button"
         size="S"
         onClick={() => editor.chain().focus().toggleItalic().run()}
@@ -171,7 +177,7 @@ const MenuBar = () => {
         }
       >
         purple
-      </Button>
+      </Button> */}
       </Flex>
     </>
   );

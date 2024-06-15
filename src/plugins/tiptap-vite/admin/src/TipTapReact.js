@@ -96,6 +96,7 @@ const TiptapReact = ({ onChange, name, value }) => {
   }, [editor]);
   return (
     <>
+      <MenuBar editor={editor} />
       <EditorContent editor={editor} />
       <BubbleMenu editor={editor}>
         <button
