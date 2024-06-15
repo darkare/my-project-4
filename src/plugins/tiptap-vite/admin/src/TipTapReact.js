@@ -3,9 +3,15 @@ import "./tiptap.css";
 import { Color } from "@tiptap/extension-color";
 import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
-import { EditorProvider } from "@tiptap/react";
+import {
+  EditorProvider,
+  EditorContent,
+  useEditor,
+  BubbleMenu,
+} from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Bold from "@tiptap/extension-bold";
 import MenuBar from "./MenuBar";
 import CounterExtension from "./components/counter/CounterExtension";
 import EditableExtension from "./components/contentEditable/EditableExtension";
@@ -63,14 +69,43 @@ display: none;
 
 const TiptapReact = ({ onChange, name, value }) => {
   const [content, setContent] = useState({});
-
+  const editor = useEditor({
+    extensions: [StarterKit, CounterExtension, EditableExtension, Bold],
+    content: `
+    <p>
+      This is still the text editor you’re used to, but enriched with node views.
+    </p>
+    <counter-component count="6"></counter-component>
+    <p>
+      Did you see that? That’s a React component. We are really living in the future.
+    </p>
+    <editable-component>
+      <p>This is editable. You can create a new component by pressing Mod+Enter.</p>
+    </editable-component>
+    <p>
+      Did you see that? That’s a React component. We are really living in the future.
+    </p>
+    `,
+  });
+  useEffect(() => {
+    return () => {
+      if (editor) {
+        editor.destroy();
+      }
+    };
+  }, [editor]);
   return (
     <>
-      <EditorProvider
-        slotBefore={<MenuBar />}
-        extensions={extensions}
-        content={DEFAULT_CONTENT}
-      />
+      <EditorContent editor={editor} />
+      <BubbleMenu editor={editor}>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleBold().run()}
+          className={editor?.isActive("bold") ? "is-active" : ""}
+        >
+          Bold
+        </button>
+      </BubbleMenu>
     </>
   );
 };
