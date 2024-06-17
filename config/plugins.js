@@ -16,5 +16,8 @@ module.exports = {
       enabled: true,
       resolve: './src/plugins/tiptap-vite'
     },
-    // ...
+    'slate-ed': {
+      enabled: true,
+      resolve: './src/plugins/slate-ed'
+    },
   }
