@@ -15,19 +15,9 @@
     "title": {
       "type": "string"
     },
-    "james": {
+    "Slate": {
       "type": "customField",
-      "customField": "plugin::tiptap-vite.tiptap-vite"
-    },
-    "cked": {
-      "type": "customField",
-      "options": {
-        "preset": "toolbar"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
-    },
-    "stapyEd": {
-      "type": "richtext"
+      "customField": "plugin::slate-ed.slate-ed"
     }
   }
 }
