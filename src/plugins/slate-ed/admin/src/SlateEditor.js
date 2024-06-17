@@ -16,18 +16,26 @@ const DefaultElement = (props) => {
   return <p {...props.attributes}>{props.children}</p>;
 };
 
-const SlateEditor = ({onChange, name, value }) => {
-  // console.log( '111-value', value);
-  const [content, setContent] = useState( value? JSON.parse(value): defaultValue);
+const SlateEditor = ({ onChange, name, value }) => {
+  console.log("111-value", value);
+  const [content, setContent] = useState();
+  // useEffect(() => {
+  //   if (value) {
+  //     setContent(JSON.parse(value));
+  //   } else {
+  //     setContent(defaultValue);
+  //   }
+  // }, []);
 
   useEffect(() => {
+    console.log("111-10-useEffect", { name, content });
     onChange({ target: { name, value: JSON.stringify(content) } });
   }, [name, content, onChange]);
 
   const debouncedUpdates = useDebounceCallback(async (val) => {
     setContent(val);
   }, 500);
- 
+
   // Define a React component renderer for our code blocks.
   const CodeElement = (props) => {
     return (
@@ -69,8 +77,9 @@ const SlateEditor = ({onChange, name, value }) => {
     // Add the editable component inside the context.
     <Slate
       editor={editor}
-      initialValue={content}
+      initialValue={value? JSON.parse(value) : defaultValue}
       onChange={(value) => {
+        console.log("111-onChange", value);
         const isAstChange = editor.operations.some(
           (op) => "set_selection" !== op.type
         );
