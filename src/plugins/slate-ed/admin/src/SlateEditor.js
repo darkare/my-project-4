@@ -17,7 +17,7 @@ const DefaultElement = (props) => {
 };
 
 const SlateEditor = ({ onChange, name, value }) => {
-  console.log("111-value", value);
+  console.log("111-value", {value});
   const [content, setContent] = useState();
   // useEffect(() => {
   //   if (value) {
@@ -72,7 +72,7 @@ const SlateEditor = ({ onChange, name, value }) => {
   const renderLeaf = useCallback((props) => {
     return <Leaf {...props} />;
   }, []);
-
+  console.log('111-value-2', {v:value, vb: value === null});
   return (
     // Add the editable component inside the context.
     <Slate
