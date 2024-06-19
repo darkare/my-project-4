@@ -72,12 +72,14 @@ const SlateEditor = ({ onChange, name, value }) => {
   const renderLeaf = useCallback((props) => {
     return <Leaf {...props} />;
   }, []);
-
+  console.log('111-value1', {v: value, vbool: value === 'null'});
+  const initVal = value || value != null? JSON.parse(value) : defaultValue;
+  console.log("111-initVal", initVal);
   return (
     // Add the editable component inside the context.
     <Slate
       editor={editor}
-      initialValue={value? JSON.parse(value) : defaultValue}
+      initialValue={value === 'null' || value === undefined? defaultValue: JSON.parse(value)}
       onChange={(value) => {
         console.log("111-onChange", value);
         const isAstChange = editor.operations.some(
