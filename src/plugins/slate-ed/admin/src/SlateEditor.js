@@ -17,7 +17,7 @@ const DefaultElement = (props) => {
 };
 
 const SlateEditor = ({ onChange, name, value }) => {
-  console.log("111-value", value);
+  console.log("111-value", {value});
   const [content, setContent] = useState();
   // useEffect(() => {
   //   if (value) {

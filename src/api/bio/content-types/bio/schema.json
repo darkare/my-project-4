@@ -17,7 +17,8 @@
     },
     "Slate": {
       "type": "customField",
-      "customField": "plugin::slate-ed.slate-ed"
+      "customField": "plugin::slate-ed.slate-ed",
+      "default":  []
     }
   }
 }
