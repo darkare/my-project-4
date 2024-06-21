@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "image_articles",
+  "info": {
+    "singularName": "image-article",
+    "pluralName": "image-articles",
+    "displayName": "Image article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feature_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    },
+    "fb_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "featureImages": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["images"],
+      "plugin": "upload",
+      "filter": {
+        "folder": "yourFolderName"
+      }
+    }
+  }
+}

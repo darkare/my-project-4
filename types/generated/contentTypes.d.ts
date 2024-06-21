@@ -375,22 +375,48 @@ export interface ApiBioBio extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
-    james: Attribute.JSON &
-      Attribute.CustomField<'plugin::tiptap-vite.tiptap-vite'>;
-    cked: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      >;
-    stapyEd: Attribute.RichText;
+    Slate: Attribute.JSON &
+      Attribute.CustomField<'plugin::slate-ed.slate-ed'> &
+      Attribute.DefaultTo<[]>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::bio.bio', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::bio.bio', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiImageArticleImageArticle extends Schema.CollectionType {
+  collectionName: 'image_articles';
+  info: {
+    singularName: 'image-article';
+    pluralName: 'image-articles';
+    displayName: 'Image article';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    feature_image: Attribute.Media & Attribute.Required;
+    Title: Attribute.String;
+    fb_image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::image-article.image-article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::image-article.image-article',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -832,6 +858,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::bio.bio': ApiBioBio;
+      'api::image-article.image-article': ApiImageArticleImageArticle;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
