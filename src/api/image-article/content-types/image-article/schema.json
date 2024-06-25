@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "image_articles",
+  "info": {
+    "singularName": "image-article",
+    "pluralName": "image-articles",
+    "displayName": "Image article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "fb_image": {
+      "type": "customField",
+      "customField": "plugin::mm-feature-image.mm-feature-image"
+    }
+  }
+}

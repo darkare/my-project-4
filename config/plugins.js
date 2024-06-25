@@ -20,4 +20,8 @@ module.exports = {
       enabled: true,
       resolve: './src/plugins/slate-ed'
     },
+    'mm-feature-image': {
+      enabled: true,
+      resolve: './src/plugins/mm-feature-image'
+    },
   }

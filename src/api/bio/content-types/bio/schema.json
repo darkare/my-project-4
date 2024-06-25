@@ -18,7 +18,20 @@
     "Slate": {
       "type": "customField",
       "customField": "plugin::slate-ed.slate-ed",
-      "default":  []
+      "default": []
+    },
+    "name": {
+      "type": "string"
+    },
+    "bioImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

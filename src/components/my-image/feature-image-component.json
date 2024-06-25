@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_my_image_feature_image_components",
+  "info": {
+    "displayName": "feature-image-component",
+    "icon": "gate"
+  },
+  "options": {},
+  "attributes": {
+    "main_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
